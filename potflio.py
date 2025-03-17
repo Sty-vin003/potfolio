@@ -219,7 +219,7 @@ st.markdown("<p class='section-header'>Data Storytelling</p>", unsafe_allow_html
 st.write("Here are some examples of my data storytelling work:")
 
 # Add your images here
-data_storytelling_images = ["students dashb.png", "story1.png"]  # Replace with your image files
+data_storytelling_images = ["students dashb.PNG", "story1.png"]  
 for image_path in data_storytelling_images:
     image = Image.open(image_path)
     st.image(image, caption="Data Storytelling Example", width=600)
