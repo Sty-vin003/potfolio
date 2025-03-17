@@ -145,7 +145,7 @@ with col2:
     st.image(image_top_right, width=150)
 
 # Sidebar with profile image
-image = Image.open("profile.jpg")  # Replace with your profile image
+image = Image.open("profile.JPG")  
 st.sidebar.image(image, caption="Steven Njoroge Macharia", width=200)
 st.sidebar.markdown("<p class='sidebar-text'>Email: stevenmacharia2003@gmail.com</p>", unsafe_allow_html=True)
 st.sidebar.markdown("<p class='sidebar-text'><a href='https://www.linkedin.com/in/steven-nj-272615300/' target='_blank'>Visit my LinkedIn account</a></p>", unsafe_allow_html=True)
