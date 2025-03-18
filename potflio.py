@@ -137,7 +137,7 @@ col1, col2 = st.columns([3, 1])
 with col1:
     st.markdown(f"<div class='main-title'>{animated_name}</div>", unsafe_allow_html=True)
     st.markdown("<p class='subtitle'>Android Developer | Web Designer | Software Engineer | Tech Enthusiast |  Data Storytelling expert</p>", unsafe_allow_html=True)
-    st.write("Aspiring Android Developer and Software Engineer with a strong determination to build innovative and impactful digital experiences. Highly skilled in Kotlin, Node.js, and Firebase, with a relentless drive to learn, adapt, and master new technologies. Committed to continuous growth and pushing the boundaries of mobile app development.")
+    st.write("Android Developer and Software Engineer with a strong determination to build innovative and impactful digital experiences. Highly skilled in Kotlin, Node.js, and Firebase, with a relentless drive to learn, adapt, and master new technologies. Committed to continuous growth and pushing the boundaries of mobile app development.")
 
 # Display the image in the right column
 with col2:
