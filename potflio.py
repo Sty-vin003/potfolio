@@ -461,7 +461,7 @@ with col2:
 
 # Sidebar with profile image and buttons (your original placement)
 try:
-    image = Image.open("profile.jpg")  # Your original image name
+    image = Image.open("profile.JPG")  # Your original image name
     st.sidebar.image(image, caption="Steven Njoroge Macharia", width=200)
 except:
     st.sidebar.info("Add your profile image as 'profile.jpg'")
@@ -652,7 +652,7 @@ st.markdown("<p class='section-header'>DATA STORYTELLING</p>", unsafe_allow_html
 st.write("Examples of my data visualization and storytelling work:")
 
 # Add your original images here
-data_storytelling_images = ["students dashb.png", "story1.png"]  # Your original image names
+data_storytelling_images = ["students dashb.PNG", "story1.png"]  # Your original image names
 for image_path in data_storytelling_images:
     try:
         image = Image.open(image_path)
@@ -688,7 +688,7 @@ for edu in education:
         """,
         unsafe_allow_html=True
     )
-F
+
 
 # Floating WhatsApp button
 whatsapp_button = """
