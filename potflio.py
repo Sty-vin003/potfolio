@@ -699,7 +699,7 @@ education = [
         "content": "Expected Graduation: 2025"
     },
     {
-        "title": "PLP Hackathon Participant",
+        "title": "PLP Software Development Program Participant",
         "subtitle": "Certificate of Participation",
         "content": "Earned a certificate for outstanding participation and innovative solution development."
     },
