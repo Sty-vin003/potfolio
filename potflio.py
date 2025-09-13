@@ -325,41 +325,69 @@ st.markdown(
 # Matrix rain animation
 def create_matrix_rain():
     matrix_html = """
-    <div class="matrix-rain" id="matrixRain"></div>
+    <div style="width:100%; max-width:900px; margin:auto;">
+        <canvas id="matrixCanvas"></canvas>
+    </div>
+
     <script>
-        function createMatrixRain() {
-            const container = document.getElementById('matrixRain');
-            const characters = '01010101STEVE0101NJOROGE0101MACHARIA01010101';
-            const fontSize = 14;
-            const columns = Math.floor(window.innerWidth / fontSize);
-            
-            for (let i = 0; i < columns; i++) {
-                const column = document.createElement('div');
-                column.className = 'matrix-column';
-                column.style.position = 'absolute';
-                column.style.left = (i * fontSize) + 'px';
-                column.style.top = '-100px';
-                column.style.width = fontSize + 'px';
-                
-                // Create initial characters with random delays
-                for (let j = 0; j < 20; j++) {
-                    const char = document.createElement('div');
-                    char.className = 'matrix-char';
-                    char.textContent = characters.charAt(Math.floor(Math.random() * characters.length));
-                    char.style.animationDelay = (Math.random() * 5) + 's';
-                    char.style.opacity = Math.random() * 0.5 + 0.5;
-                    column.appendChild(char);
+        const canvas = document.getElementById("matrixCanvas");
+        const ctx = canvas.getContext("2d");
+
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.offsetWidth;  // responsive width
+            canvas.height = 200;  // fixed height (you can change or make % of width)
+        }
+
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const letters = "01STEVE0101NJOROGE0101MACHARIA".split("");
+        const fontSize = 14;
+        let columns, drops;
+
+        function initDrops() {
+            columns = Math.floor(canvas.width / fontSize);
+            drops = Array(columns).fill(1);
+        }
+
+        initDrops();
+
+        function draw() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "#0F0";
+            ctx.font = fontSize + "px monospace";
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters[Math.floor(Math.random() * letters.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
                 }
-                
-                container.appendChild(column);
+                drops[i]++;
             }
         }
-        
-        // Initialize matrix rain
-        createMatrixRain();
+
+        setInterval(draw, 33);
+        window.addEventListener('resize', initDrops);
     </script>
+
+    <style>
+        #matrixCanvas {
+            display: block;
+            width: 100%;   /* responsive */
+            height: auto;  /* keeps aspect ratio */
+            background: black;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,255,0,0.5);
+        }
+    </style>
     """
-    st.components.v1.html(matrix_html, height=0)
+    st.components.v1.html(matrix_html, height=220)  # just needs enough space
+
+
 
 # Particle animation
 def create_particles():
