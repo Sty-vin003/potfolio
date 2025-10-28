@@ -572,7 +572,7 @@ client_projects = [
     {
         "name": "CONSULTANCY FIRM WEBSITE",
         "description": "a very asthetic website for a consultacy firm with all relevant content",
-        "url": "https://bellwick-africa.onrender.com",
+        "url": "https://bellwickllp.com",
         "technologies": ["mailer", "javascript", "git/github", "php"]
     }
 ]
