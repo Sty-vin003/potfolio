@@ -696,7 +696,7 @@ education = [
     {
         "title": "Bachelor of Science in Software Engineering",
         "subtitle": "Zetech University",
-        "content": "Expected Graduation: 2025"
+        "content": "Graduated November, 2025"
     },
     {
         "title": "PLP Software Development Program Participant",
